@@ -1,10 +1,33 @@
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #053b06;
+  --secondary-color: #5689b3;
+  --accent1-color: #817774;
+  --accent2-color: #139a43;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "Rubik", sans-serif;
+  --paragraph-font: "Roboto", "Helvetica", sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: white; /* headlines on a white background */
+  --headline-color-on-color: white; /* headlines on a colored background */
+  --paragraph-color-on-white: white; /* paragraph text on a white background */
+  --paragraph-color-on-color: white; /* paragraph text on a colored background */
+  --paragraph-background-color: #c4bfc4;
+  --nav-link-color: #ffffff;
+  --nav-background-color: #0b5d1e;
+  --nav-hover-link-color: white;
+  --nav-hover-background-color: #139a43;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: var(--primary-color);
 }
 
 /* Navbar */
-.navbar {
+#header-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,11 +35,19 @@ body {
   padding: 10px 20px;
   color: white;
 }
-nav h1 a{
+nav h1 a {
   color: white;
   text-decoration: none;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+}
 /* Hamburger */
 .hamburger {
   display: flex;
@@ -35,21 +66,21 @@ nav h1 a{
 .menu {
   display: none;
   flex-direction: column;
-  background: #444;
   position: absolute;
   top: 50px;
   right: 0;
   width: 175px;
 }
-button, nav-link{
+button,
+nav-link {
   font-size: 15px;
 }
 .menu.active {
   display: flex;
 }
 
-.menu a, .dropdown-btn {
-  color: white;
+.menu a,
+.dropdown-btn {
   padding: 12px;
   text-decoration: none;
   border-bottom: 1px solid black;
@@ -57,17 +88,22 @@ button, nav-link{
   text-align: left;
   width: 100%;
   cursor: pointer;
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
 }
 
-.menu a:hover, .dropdown-btn:hover {
-  background: #555;
+.menu a:hover,
+.dropdown-btn:hover {
+  background: var(--secondary-color);
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
 }
 
 /* Dropdown content */
 .dropdown {
   display: none;
   flex-direction: column;
-  background: #555;
+  background: var(--nav-background-color);
 }
 
 .dropdown a {
@@ -76,4 +112,16 @@ button, nav-link{
 
 .dropdown.active {
   display: flex;
+}
+#footer-navbar {
+  display: flex;
+  float: bottom;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
+  display: grid;
+}
+footer nav a {
+  color: var(--paragraph-color-on-color);
 }
