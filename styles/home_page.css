@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Menu */
+.menu {
+  display: none;
+  flex-direction: column;
+  background: #444;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu a, .dropdown-btn {
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.menu a:hover, .dropdown-btn:hover {
+  background: #555;
+}
+
+/* Dropdown content */
+.dropdown {
+  display: none;
+  flex-direction: column;
+  background: #555;
+}
+
+.dropdown a {
+  padding-left: 25px;
+}
+
+.dropdown.active {
+  display: flex;
+}
